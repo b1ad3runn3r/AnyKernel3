@@ -20,7 +20,7 @@ supported.versions=
 
 ## shell variables
 block=/dev/block/by-name/boot;
-is_slot_device=1
+is_slot_device=0
 ramdisk_compression=auto;
 
 
