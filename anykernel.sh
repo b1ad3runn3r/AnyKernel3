@@ -22,6 +22,7 @@ supported.versions=
 block=/dev/block/by-name/boot;
 is_slot_device=0;
 ramdisk_compression=auto;
+keep_vbmeta_flag=auto;
 
 
 ## AnyKernel methods (DO NOT CHANGE)
@@ -40,5 +41,20 @@ patch_cmdline "androidboot.selinux=permissive" "";
 patch_cmdline "is_power_efficient" "";
 write_boot;
 
-## end install
+
+# shell variables
+#block=vendor_boot;
+#is_slot_device=1;
+#ramdisk_compression=auto;
+#keep_vbmeta_flag=auto;
+
+# reset for vendor_boot patching
+#reset_ak;
+
+
+## AnyKernel vendor_boot install
+#split_boot; # skip unpack/repack ramdisk since we don't need vendor_ramdisk access
+
+#flash_boot;
+## end vendor_boot install
 
